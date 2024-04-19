@@ -1,5 +1,57 @@
 # Creating Helm Chart
 
+# What is Helm?
+
+- It's just like the package manager as yum, apt, and homebrew. Through this, we can install update or rollback Kubernetes applications.
+- It can simplify complicated application deployments into a single command.
+- Just like those package managers manage software on traditional operating systems, Helm simplifies managing software (applications) designed for deployment on Kubernetes clusters.
+- It provides a central repository for finding reusable software packages (Helm charts).
+- Helm offers functionalities similar to package managers like installation, update, and rollback, but tailored for the context of Kubernetes applications.
+
+**Helm Specifics:**
+
+- **Helm Charts:** Unlike traditional packages, Helm applications are packaged as Helm charts. These charts bundle all the resources (like deployments, services) and configurations needed to run the application on Kubernetes.
+- **Templating for Reusability:** Helm charts leverage templating with placeholders for configuration values. This allows a single chart to be deployed in various environments by simply adjusting the values.
+- **Focus on Kubernetes Deployments:** While traditional package managers handle software installation on a system level, Helm is laser-focused on streamlining deployments within Kubernetes environments.
+
+**Benefits of Helm:**
+
+- **Simplified Deployments:** Helm transforms complex deployments into single-command operations, saving time and effort.
+- **Standardized Packaging:** Helm charts provide a consistent way to package Kubernetes applications, promoting easier sharing, reuse, and management.
+- **Version Control and Rollbacks:** Similar to traditional package managers, Helm facilitates version control of deployed applications and enables rollbacks to previous versions if necessary.
+
+
+## Helm Chats
+
+Helm charts are essentially packaged applications designed for deployment in Kubernetes environments. They bundle all the necessary resources and configurations required to run an application on Kubernetes.  Here's a breakdown of Helm charts:
+
+- It's simply the collection of the YAML files that are bundled together.
+- It supports helm templating, to make the configurations more dynamic.
+- Stored in public and private repos.
+
+**Components:**
+
+- **Files:** A Helm chart is a directory containing various files that define the application and its deployment process.
+- **Templates:** These files (usually in the `templates` directory) written in Go template language specify the Kubernetes resources (deployments, services, etc.) to be deployed. They include placeholders (`{{ .Values.key }}`) that are filled with actual values during deployment.
+- **Values:** Configuration settings for the application are defined in YAML files (primarily `values.yaml`). These values are used to customize the templates and control aspects like resource configurations and application behavior.
+- **Chart.yaml:** This crucial file provides metadata about the chart, including its name, version, description, and dependencies on other charts.
+
+**Benefits:**
+
+- **Standardized Packaging:** Helm charts provide a standardized way to package Kubernetes applications, making them easier to share, reuse, and manage.
+- **Templating for Reusability:** Templates with placeholders for configuration values allow deployment in various environments by simply modifying the values. A single chart can be used for development, testing, and production with specific configurations.
+- **Simplified Management:** Configuration management is centralized in YAML files, streamlining deployments and reducing errors.
+
+**How it Works:**
+
+1. **Install the Helm chart:** You use the `helm install` command to deploy the chart.
+2. **Template Rendering:** Helm processes the templates, substituting placeholders with values from `values.yaml` or override files (e.g., `values-prod.yaml`).
+3. **Manifest Generation:** This process creates the final Kubernetes resource manifests based on the rendered templates.
+4. **Deployment:** Helm deploys these manifests to the Kubernetes cluster, provisioning resources and configuring the application.
+
+In essence, Helm charts act as blueprints for deploying applications on Kubernetes. They offer a streamlined and efficient way to manage deployments by encapsulating all the necessary components and configurations.
+
+
 ![Untitled](Creating%20Helm%20Chart%209e0641033d9f4746acef288f66224314/Untitled.png)
 
 ![Untitled](Creating%20Helm%20Chart%209e0641033d9f4746acef288f66224314/Untitled%201.png)

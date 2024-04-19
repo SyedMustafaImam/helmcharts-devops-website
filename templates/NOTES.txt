@@ -1,0 +1,10 @@
+
+_______________WEBSITE {{ .Values.appName }} DEPLOYED________________________
+
+Configmap = {{ .Values.configmap.name }}
+
+Now check that pods are UP or not:
+-> kubectl get pods -n {{ .Values.nameSpace }}
+
+To access the website run:
+-> minikube service {{ .Values.appName }} -n {{ .Values.nameSpace }}

@@ -1,0 +1,5 @@
+nameSpace: html-webapp-dev
+configmap:
+  data:
+    CUSTOM_HEADER: "This app was deployed with helm! Its Dev ENV"
+

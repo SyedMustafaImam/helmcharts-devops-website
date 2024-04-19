@@ -1,5 +1,3 @@
-# Creating Helm Chart
-
 # What is Helm?
 
 - It's just like the package manager as yum, apt, and homebrew. Through this, we can install update or rollback Kubernetes applications.
@@ -41,6 +39,10 @@ Helm charts are essentially packaged applications designed for deployment in Kub
 - **Standardized Packaging:** Helm charts provide a standardized way to package Kubernetes applications, making them easier to share, reuse, and manage.
 - **Templating for Reusability:** Templates with placeholders for configuration values allow deployment in various environments by simply modifying the values. A single chart can be used for development, testing, and production with specific configurations.
 - **Simplified Management:** Configuration management is centralized in YAML files, streamlining deployments and reducing errors.
+
+
+# Creating Helm Chart
+
 
 **How it Works:**
 
